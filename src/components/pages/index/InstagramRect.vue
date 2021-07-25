@@ -36,6 +36,10 @@
             width: 100%;
             min-height: 534px;
         }
+        @media screen and (max-width:768px){
+            width: 100%;
+            min-height: 321px;
+        }
         &__content {
             position: absolute;
             left: 0px;
