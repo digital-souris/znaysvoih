@@ -1,0 +1,10 @@
+@use "sass:math";
+
+@function em($size) {
+  @return $size / 16 + em;
+}
+@mixin media($size) {
+  @media screen and (max-width: $size + px) {
+    @content;
+  }
+}
