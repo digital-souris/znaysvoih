@@ -69,6 +69,9 @@
         padding: 46px 39px 32px;
         background-color: #fff;
         position: relative;
+        @media screen and (max-width:768px){
+            padding: 15px 10px 10px;
+        }
 
         &__wrapper {
             display: flex;
@@ -90,6 +93,7 @@
             width: 70%;
             padding: 0;
             margin: 0;
+            z-index: 5;
             @media screen and (max-width:992px) {
                 display: none;
                 position: absolute;

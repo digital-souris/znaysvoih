@@ -4,7 +4,7 @@ import router from './router'
 import store from './store'
 
 Vue.config.productionTip = false
-
+import 'slick-carousel/slick/slick.css';
 import './assets/styles/index.scss'
 
 new Vue({
