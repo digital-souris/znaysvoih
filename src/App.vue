@@ -29,6 +29,9 @@
   import MainHeader from "./components/layouts/MainHeader";
   import MainFooter from "./components/layouts/MainFooter";
   export default {
-    components: {MainFooter, MainHeader}
+    components: {MainFooter, MainHeader},
+    mounted() {
+      this.$store.dispatch('getCart')
+    }
   }
 </script>

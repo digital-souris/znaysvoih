@@ -18,7 +18,7 @@ body {
 }
 
 .button {
-  background: #D4B6BA;
+  background: #E5D3D5;
   border: none;
   outline: none;
   cursor: pointer;
@@ -40,13 +40,16 @@ body {
     font-size: 14px;
   }
   &:hover {
-    background: #E5D3D5;
+    background: #D4B6BA;
     &::before {
-      border-bottom-color: #E5D3D5;
+      border-bottom-color: #D4B6BA;
     }
     &::after {
-      border-top-color: #E5D3D5;
+      border-top-color: #D4B6BA;
     }
+  }
+  &_dark {
+    color: #000;
   }
   &_rect {
     /*&::before {
