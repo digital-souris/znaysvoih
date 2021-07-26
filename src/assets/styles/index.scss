@@ -17,6 +17,19 @@ body {
   margin: 0;
 }
 
+.title {
+  text-align: center;
+  text-transform: uppercase;
+  margin: 0;
+  &_second {
+    font-size: 48px;
+    font-weight: 500;
+  }
+  &_grey {
+    color: #000;
+  }
+}
+
 .button {
   background: #E5D3D5;
   border: none;
@@ -51,6 +64,7 @@ body {
   &_dark {
     color: #000;
   }
+
   &_rect {
     /*&::before {
       content:'';

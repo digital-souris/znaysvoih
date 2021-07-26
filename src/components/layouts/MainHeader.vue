@@ -63,6 +63,11 @@
             return {
                 showOnMobile: false
             }
+        },
+        watch: {
+            $route (){
+                this.showOnMobile = false;
+            }
         }
     }
 </script>
