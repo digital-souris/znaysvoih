@@ -14,17 +14,53 @@ export default new Vuex.Store({
   },
   mutations: {
     addToCart(state, payload) {
+      let product = payload
+
       let findToCart = _.findIndex(state.cart, (item) => {
         return item.id === payload.id
       })
-      console.log(findToCart)
       if (findToCart === -1) {
-        state.cart.push({id: payload.id, count: payload.count})
+        if (!payload.count) {
+          product.count = 1
+        }
+        state.cart.push(product)
       }
       else {
-        state.cart[findToCart].count+=payload.count
+        if (!payload.count) {
+          state.cart[findToCart].count++
+        }
+        else {
+          state.cart[findToCart].count+=payload.count
+        }
       }
       localStorage.setItem('cart', JSON.stringify(state.cart))
+    },
+    changeCountCart(state, payload) {
+      const findProduct = _.findIndex(state.cart, (item) => {
+        return item.id === payload.id
+      })
+      if (findProduct !== -1) {
+        if (payload.count) {
+          state.cart[findProduct].count = payload.count
+        }
+        else if (payload.type) {
+          state.cart[findProduct].count++
+        }
+        else {
+          state.cart[findProduct].count--
+        }
+        localStorage.setItem('cart', JSON.stringify(state.cart))
+      }
+    },
+    deleteProductToCart(state, payload) {
+      const findProduct = _.findIndex(state.cart, (item) => {
+        return item.id === payload.id
+      })
+      if (findProduct !== -1) {
+        state.cart.splice(findProduct, 1)
+        localStorage.setItem('cart', JSON.stringify(state.cart))
+      }
+
     },
     loadCart(state, payload) {
       state.cart = payload

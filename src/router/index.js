@@ -38,6 +38,11 @@ const routes = [
     name: 'Collections',
     component: () => import('../views/Collections')
   },
+  {
+    path: '/cart',
+    name: 'Cart',
+    component: () => import('../views/Cart')
+  }
 ]
 
 const router = new VueRouter({

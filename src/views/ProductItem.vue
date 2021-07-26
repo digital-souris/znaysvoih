@@ -91,7 +91,9 @@
         },
         methods: {
             addToCard() {
-                this.$store.commit('addToCart', {id: this.product.id, count: this.count})
+                let product = this.product
+                product.count = this.count
+                this.$store.commit('addToCart', product)
                 this.count = 1
             },
             changeCount(status) {
