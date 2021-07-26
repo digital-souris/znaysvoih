@@ -27,7 +27,12 @@ const routes = [
     path: '/service',
     name: 'Service',
     component: () => import('../views/Service')
-  }
+  },
+  {
+    path: '/shop/:id',
+    name: 'Product',
+    component: () => import('../views/ProductItem')
+  },
 ]
 
 const router = new VueRouter({

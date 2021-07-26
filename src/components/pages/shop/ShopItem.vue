@@ -12,7 +12,7 @@
             <div class="product__price">{{product.price.toLocaleString()}} Р</div>
         </div>
         <div class="product__button">
-            <button class="button button_rect button_dark" @click="$store.commit('addToCart', product.id)">Купить</button>
+            <button class="button button_rect button_dark" @click="$store.commit('addToCart', {id:product.id, count: 1})">Купить</button>
         </div>
     </div>
 </template>

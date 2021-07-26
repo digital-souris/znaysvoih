@@ -15,14 +15,14 @@ export default new Vuex.Store({
   mutations: {
     addToCart(state, payload) {
       let findToCart = _.findIndex(state.cart, (item) => {
-        return item.id === payload
+        return item.id === payload.id
       })
       console.log(findToCart)
       if (findToCart === -1) {
-        state.cart.push({id: payload, count: 1})
+        state.cart.push({id: payload.id, count: payload.count})
       }
       else {
-        state.cart[findToCart].count++
+        state.cart[findToCart].count+=payload.count
       }
       localStorage.setItem('cart', JSON.stringify(state.cart))
     },

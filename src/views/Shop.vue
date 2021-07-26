@@ -51,7 +51,7 @@
                             {
                                 id: 1,
                                 img: '/img/collections.jpg',
-                                link: '#',
+                                link: '/shop/1',
                                 price: 1000,
                                 name: 'худи свобода'
                             },
