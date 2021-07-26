@@ -22,7 +22,7 @@
                     Расскажи о своём герое
                 </div>
                 <div class="history__button">
-                    <a href="#" target="_blank" class="button button_rect">поделиться</a>
+                    <a href="/partners" target="_blank" class="button button_rect">поделиться</a>
                 </div>
             </div>
         </div>
