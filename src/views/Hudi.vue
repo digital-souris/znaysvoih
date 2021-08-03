@@ -6,7 +6,7 @@
         <div class="constructor__wrapper">
             <div class="constructor__left">
                 <div class="constructor__image">
-                    <svg width="579" height="697" viewBox="0 0 579 697" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg width="579" height="697" ref="wrapper" viewBox="0 0 579 697" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path v-if="!images.rightHand" d="M497.501 269.5L520 303L536.5 367L558.113 481.966L504.336 495.606L450 281.39L497.501 269.5Z" fill="#C4C4C4" fill-opacity="0.5"/>
                         <rect v-if="!images.breast" x="402.154" y="374.992" width="221" height="87" transform="rotate(179.227 402.154 374.992)" fill="#C4C4C4" fill-opacity="0.5"/>
                         <path v-if="!images.leftHand" d="M110.5 295L72.2811 495.841L22.9996 484.5L38.9996 377.5L52.4996 323.5L72.2811 279.206L110.5 295Z" fill="#C4C4C4" fill-opacity="0.5"/>
@@ -17,6 +17,7 @@
                         <path d="M245.828 229.285V370.901" stroke="#E5D3D5" stroke-width="4" stroke-miterlimit="10"/>
                         <path d="M338.42 229.285V370.901" stroke="#E5D3D5" stroke-width="4" stroke-miterlimit="10"/>
                     </svg>
+                    <canvas id="constructor-canvas" ref="canvas" class="constructor__canvas"></canvas>
                     <img v-if="images.breast" :src="images.breast" alt="" class="constructor__image_breast">
                     <img v-if="images.leftHand" :src="images.leftHand" alt="" class="constructor__image_left-hand">
                     <img v-if="images.rightHand" :src="images.rightHand" alt="" class="constructor__image_right-hand">
@@ -126,6 +127,7 @@
 </template>
 
 <script>
+    import {fabric} from 'fabric'
     export default {
         name: "Hudi",
         data() {
@@ -173,11 +175,31 @@
             },
             previewImage(type, file) {
                 let reader = new FileReader();
-                reader.addEventListener("load", () => {
-                    this.images[type] = reader.result
+                if (this.images[type]) {
+                    this.canvas.remove(this.images[type])
+                }
+                reader.addEventListener("load", (event) => {
+                    let imgObj = new Image()
+                    imgObj.src = event.target.result
+                    imgObj.onload = () => {
+                        let img = new fabric.Image(imgObj)
+                        img.scaleToHeight(200)
+                        this.images[type] = img
+                        this.canvas.centerObject(img)
+                        this.canvas.add(img)
+                        this.canvas.discardActiveObject().renderAll()
+                    }
                 })
                 reader.readAsDataURL(file);
             }
+        },
+        mounted() {
+            this.canvas = new fabric.Canvas(this.$refs.canvas, {
+                width: this.$refs.wrapper.clientWidth,
+                height: this.$refs.wrapper.clientHeight,
+                borderColor: '#000000',
+                cornerSize: 34,
+            })
         }
     }
 </script>
