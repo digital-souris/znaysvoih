@@ -1,17 +1,17 @@
 <template>
-    <div class="product">
-        <div class="product__image">
-            <router-link :to="product.link">
+    <div class="product__item">
+        <div class="product__item__image">
+            <a :href="product.link">
                 <img :src="product.img" :alt="product.name">
-            </router-link>
+            </a>
         </div>
-        <div class="product__content">
-            <h3 class="product__title">
-                <router-link :to="product.link">{{product.name}}</router-link>
+        <div class="product__item__content">
+            <h3 class="product__item__title">
+                <a :href="product.link">{{product.name}}</a>
             </h3>
-            <div class="product__price">{{product.price.toLocaleString()}} Р</div>
+            <div class="product__item__price">{{product.price.toLocaleString()}} Р</div>
         </div>
-        <div class="product__button">
+        <div class="product__item__button">
             <button class="button button_rect button_dark" @click="$store.commit('addToCart', product)">Купить</button>
         </div>
     </div>
@@ -25,7 +25,7 @@
 </script>
 
 <style scoped lang="scss">
-    .product {
+    .product__item {
         padding-top: 15px;
         min-width: 400px;
         max-width: 660px;

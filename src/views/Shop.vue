@@ -1,8 +1,8 @@
 <template>
-    <div class="shop">
-        <div class="shop__category" v-for="category in categories" :key="category.id">
-            <h2 class="shop__title">{{category.name}}</h2>
-            <div class="shop__wrapper" v-if="category.items">
+    <div class="shop-page">
+        <div class="shop-page__category" v-for="category in categories" :key="category.id">
+            <h2 class="shop-page__title">{{category.name}}</h2>
+            <div class="shop-page__wrapper" v-if="category.items">
                 <shop-item v-for="product in category.items" :key="product.id" :product="product"></shop-item>
             </div>
         </div>
@@ -78,7 +78,7 @@
 </script>
 
 <style scoped lang="scss">
-    .shop {
+    .shop-page {
         padding: 20px 40px 20px;
         &__title {
             margin: 0;

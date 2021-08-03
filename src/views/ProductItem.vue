@@ -1,36 +1,36 @@
 <template>
-    <div class="product">
-        <div class="product__image">
-            <div class="product__main">
+    <div class="product-page">
+        <div class="product-page__image">
+            <div class="product-page__main">
                 <slick ref="main" :options="mainSlider" class="main-slider">
-                    <div class="product__slide" v-for="(slide, index) of product.slider" :key="index">
+                    <div class="product-page__slide" v-for="(slide, index) of product.slider" :key="index">
                         <img :src="slide" :alt="product.name">
                     </div>
                 </slick>
             </div>
-            <div class="product__second">
+            <div class="product-page__second">
                 <slick ref="second" :options="secondSlider" class="second-slider">
-                    <div class="product__slide product__slide_second" v-for="(slide, index) of product.slider" :key="index">
+                    <div class="product-page__slide product__slide_second" v-for="(slide, index) of product.slider" :key="index">
                         <img :src="slide" :alt="product.name">
                     </div>
                 </slick>
             </div>
         </div>
-        <div class="product__content">
-            <h1 class="product__title">{{product.name}}</h1>
-            <div class="product__text" v-html="product.text"></div>
-            <div class="product__cart">
-                <div class="product__price">{{product.price.toLocaleString()}} Р</div>
-                <div class="product__info">
-                    <span class="product__x">X</span>
-                    <input type="text" class="product__input" v-model="count">
-                    <div class="product__buttons">
-                        <button class="product__button product__button_subtract" @click="changeCount(false)">–</button>
-                        <button class="product__button product__button_add" @click="changeCount(true)">+</button>
+        <div class="product-page__content">
+            <h1 class="product-page__title">{{product.name}}</h1>
+            <div class="product-page__text" v-html="product.text"></div>
+            <div class="product-page__cart">
+                <div class="product-page__price">{{product.price.toLocaleString()}} Р</div>
+                <div class="product-page__info">
+                    <span class="product-page__x">X</span>
+                    <input type="text" class="product-page__input" v-model="count">
+                    <div class="product-page__buttons">
+                        <button class="product-page__button product__button_subtract" @click="changeCount(false)">–</button>
+                        <button class="product-page__button product__button_add" @click="changeCount(true)">+</button>
                     </div>
                 </div>
             </div>
-            <div class="product__footer">
+            <div class="product-page__footer">
                 <button class="button button_rect button_dark" @click="addToCard">Купить</button>
             </div>
         </div>
@@ -115,7 +115,7 @@
 </script>
 
 <style scoped lang="scss">
-    .product {
+    .product-page {
         padding-left: 10px;
         padding-right: 10px;
         max-width: 1260px;

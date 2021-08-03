@@ -1,15 +1,15 @@
 <template>
     <div>
-        <div class="background" style="background-image: url(/img/bg_collection.jpg);"></div>
-        <div class="collection">
-            <div class="collection__wrap">
-                <p class="collection__desc">капсульная коллекция</p>
-                <h2 class="collection__title">свобода</h2>
-                <div class="collection__info">
+        <div class="collection-page__background" style="background-image: url(/img/bg_collection.jpg);"></div>
+        <div class="collection-page">
+            <div class="collection-page__wrap">
+                <p class="collection-page__desc">капсульная коллекция</p>
+                <h2 class="collection-page__title">свобода</h2>
+                <div class="collection-page__info">
                     Она волнует людей всех поколений в каждой стране!
                     Наши предки формировали тот мир, в котором мы живём сегодня.
                 </div>
-                <div class="collection__text">
+                <div class="collection-page__text">
                     <p>В этой капсульной коллекции мы хотим показать через призму времени проблемы, с которыми сталкивались наши предки, мы показываем ценность свободы, чтобы мы не совершали ошибки прошлого.
                         Нам важно показать, как человек, который дал свободу,  подарил нам множество талантливых и выдающихся людей!
                     </p>
@@ -57,7 +57,7 @@
                 activeHero: 0,
                 heroes: [
                     {
-                        image: '/img/hero1.jpg',
+                        image: 'img/hero1.jpg',
                         name: 'Александр II',
                         date: '17.04.1818—1.03.1881',
                         text: 'Вошёл в русскую историю как император, реализовавший широкомасштабные реформы. ' +
@@ -90,7 +90,7 @@
                             'организацией «Народная воля».'
                     },
                     {
-                        image: '/img/hero1.jpg',
+                        image: 'img/hero1.jpg',
                         name: 'Александр II',
                         date: '17.04.1818—1.03.1881',
                         text: 'Вошёл в русскую историю как император, реализовавший широкомасштабные реформы. ' +
@@ -104,14 +104,14 @@
                 shop: [
                     {
                         id: 1,
-                        img: '/img/collections.jpg',
+                        img: 'img/collections.jpg',
                         link: '#',
                         price: 1000,
                         name: 'худи свобода'
                     },
                     {
                         id: 2,
-                        img: '/img/collections.jpg',
+                        img: 'img/collections.jpg',
                         link: '#',
                         price: 1000,
                         name: 'худи свобода'
@@ -128,7 +128,7 @@
 </script>
 
 <style scoped lang="scss">
-    .background {
+    .collection-page__background {
         min-height: 581px;
         background-repeat: no-repeat;
         background-position: center;
@@ -143,7 +143,7 @@
             }
         }
     }
-    .collection {
+    .collection-page {
         position: relative;
         &__wrap {
             max-width: 969px;

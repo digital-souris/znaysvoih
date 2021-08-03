@@ -1,6 +1,6 @@
 <template>
   <div class="about">
-    <div class="background" style="background-image: url(/img/about_bg.jpg);"></div>
+    <div class="about__background" style="background-image: url(/img/about_bg.jpg);"></div>
     <section class="section section_about">
       <div class="about__wrapper">
         <p>
@@ -53,7 +53,7 @@
   }
 </script>
 <style lang="scss" scoped>
-  .background {
+  .about__background {
     min-height: 692px;
     background-repeat: no-repeat;
     background-position: center;

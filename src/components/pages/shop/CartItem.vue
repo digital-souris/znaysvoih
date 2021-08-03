@@ -1,28 +1,28 @@
 <template>
-    <div class="product">
-        <div class="product__left">
+    <div class="product-cart">
+        <div class="product-cart__left">
             <router-link :to="'/shop/' + product.id">
                 <img :src="product.img" :alt="product.name">
             </router-link>
         </div>
-        <div class="product__right">
-            <h2 class="product__name">
+        <div class="product-cart__right">
+            <h2 class="product-cart__name">
                 <router-link :to="'/shop/' + product.id">
                     {{product.name}}
                 </router-link>
             </h2>
-            <div class="product__form">
-                <input type="text" class="product__input" :value="product.count" @change="changeText">
-                <div class="product__buttons">
-                    <button class="product__button product__button_subtract" @click="changeCount(false)">–</button>
-                    <button class="product__button product__button_add" @click="changeCount(true)">+</button>
+            <div class="product-cart__form">
+                <input type="text" class="product-cart__input" :value="product.count" @change="changeText">
+                <div class="product-cart__buttons">
+                    <button class="product-cart__button product__button_subtract" @click="changeCount(false)">–</button>
+                    <button class="product-cart__button product__button_add" @click="changeCount(true)">+</button>
                 </div>
             </div>
-            <div class="product__footer">
-                <div class="product__price">
+            <div class="product-cart__footer">
+                <div class="product-cart__price">
                     {{(product.price * product.count).toLocaleString()}} Р
                 </div>
-                <div class="product__cross">
+                <div class="product-cart__cross">
                     <svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg"
                         @click="$store.commit('deleteProductToCart', {id: product.id})"
                     >
@@ -58,7 +58,7 @@
 </script>
 
 <style scoped lang="scss">
-    .product {
+    .product-cart {
         padding-bottom: 44px;
         display: flex;
         justify-content: flex-start;

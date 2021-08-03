@@ -1,5 +1,5 @@
 <template>
-    <section class="section">
+    <section class="section section_cart">
         <h1 class="titles">Корзина</h1>
         <div class="cart">
             <div class="cart__left">
@@ -337,7 +337,7 @@
         }
     }
 
-    .section {
+    .section_cart {
         max-width: 1317px;
         width: 100%;
         margin: 0 auto;
